@@ -1,0 +1,16 @@
+name: biocuration-cockpit
+channels:
+  - conda-forge # bs4, streamlit
+  - anacondaA # lxml
+  - akode # nmslib
+  - biobuilds # obonet
+dependencies
+  - bs4
+  - lmxl
+  - nmslib
+  - requests
+  - streamlit
+  - pip:
+    - bioc
+    - scispacy
+    - git+https://github.com/OntoGene/PyBioC.git
