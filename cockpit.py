@@ -128,7 +128,7 @@ if not has_annotations and is_doc_downloaded:
     if result:
       fn_anno_bioc = os.path.join(path_data, f'{id_pmc}.ann.json')
       # convert document to PubAnnotator
-      bioc2pubanno(fn_anno, fn_anno)
+      bioc2pubanno(fn_anno_bioc, fn_anno)
       # show document and supplementary UI sections
       has_annotations = True
     else:

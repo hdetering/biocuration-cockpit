@@ -4,7 +4,7 @@ channels:
   - anacondaA # lxml
   - akode # nmslib
   - biobuilds # obonet
-dependencies
+dependencies:
   - bs4
   - lmxl
   - nmslib
