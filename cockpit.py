@@ -3,9 +3,9 @@ import streamlit.components.v1 as components
 import os
 import requests
 import pandas as pd
-from OntologyAnnotator.SupplementaryDownloader import download_doc_pmc_id
-from OntologyAnnotator.bioc2pubannotation import bioc2pubanno
-from OntologyAnnotator.Annotator import main as annotate
+from SupplementaryDownloader import download_doc_pmc_id
+from bioc2pubannotation import bioc2pubanno
+from Annotator import main as annotate
 
 # configurable paths
 path_ontology = '/home/hdetering/Dropbox/Projects/Bgee/visualisation/data/uberon.obo'
@@ -121,7 +121,7 @@ Viewer showing document content (text only, formatting removed).
 fn_anno = os.path.join(path_data, f'{id_pmc}.ann.pubann.json')
 if os.path.exists(fn_anno):
   has_annotations = True
-if not has_annotations:
+if not has_annotations and is_doc_downloaded:
   if st.button('Annotate!'):
     with st.spinner('Annotating document...'):
       result = annotate(path_ontology, path_data)
