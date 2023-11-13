@@ -8,7 +8,7 @@ from bioc2pubannotation import bioc2pubanno
 from Annotator import main as annotate
 
 # configurable paths
-path_ontology = '/home/hdetering/Dropbox/Projects/Bgee/visualisation/data/uberon.obo'
+path_ontology = './data/uberon.obo'
 
 # toggle rendering of sections
 show_doc = False
@@ -125,7 +125,6 @@ if not has_annotations and is_doc_downloaded:
   if st.button('Annotate!'):
     with st.spinner('Annotating document...'):
       result = annotate(path_ontology, path_data)
-      #pass
     if result:
       fn_anno_bioc = os.path.join(path_data, f'{id_pmc}.ann.json')
       # convert document to PubAnnotator

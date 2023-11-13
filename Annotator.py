@@ -246,8 +246,6 @@ def get_hyphenated_variations(term: str):
 def main(ontology_path, directory):
     model = SpacyModel(ontology_path)
     files = [x for x in os.listdir(directory) if ".json" in x and ".ann." not in x and ".pubann." not in x]
-    # files = ["/home/tr142/Downloads/PMC6522369.json", "/home/tr142/Downloads/PMC7231479.json",
-    #          "/home/tr142/Downloads/PMC9616121.json"]
     # for file in files:
     for idx_file in range(len(files)):
         filepath = os.path.join(directory, files[idx_file])
@@ -281,6 +279,8 @@ def main(ontology_path, directory):
             fn_out = os.path.basename(filepath).replace(".json", ".ann.json")
             outfile = os.path.join(filepath.rsplit("/", 1)[0], fn_out)
             write_bioc_study(doc, outfile)
+
+    return True
 
 
 if __name__ == "__main__":
